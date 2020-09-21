@@ -1,38 +1,174 @@
-.App {
-  text-align: center;
+.landing-page,.start-trial,.success-page,.verify-otp{
+    min-height:100vh;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.pageClass .left-side-content,.pageClass .right-side-content{    
+    height:100%;
+}
+.pageClass .outside-left-content{
+  background-color:#166dce;
+}
+.pageClass .outside-right-content{
+  background-color: #ddd;
+}
+.pageClass .right-side-content{
+  padding:60px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+form{
+  padding:30px 20px;
+  background:#fff;
+  border-radius:3px;
+  border:1px solid #ddd;
+  height:100%;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+form h2{
+   font-size:24px;
+   line-height:32px;
+   color:#166dce;
+   font-weight:bold;
+   text-align: center;
 }
 
-.App-link {
-  color: #61dafb;
+form .module h3{
+  font-size:16px;
+  color:#000;
+  font-weight:bold;
+}
+form .module .module-content{
+  color:#000;
+  font-size:14px; 
+  background:#ddd;
+}
+form .module h4{
+  margin:0;
+  font-size:14px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+form .email-content{
+  position: relative;
+}
+
+form .email-content label{
+    font-size:16px;
+    color:#000;
+    font-weight:bold;
+}
+
+form .email-content input,form .main-content select,form .main-content option{
+    width:100%;
+    padding:5px 20px 5px 35px;
+    font-size:14px;
+    font-weight:normal;
+    border:2px solid #ddd;
+    border-radius:3px;
+}
+form .main-content select,form .main-content option{
+  background-color: #fff;
+}
+
+form .email-content span{
+  position: absolute;
+  top:38px;
+  left:10px;
+}
+form .email-content span svg{
+  font-size:16px;
+  color:#aaabaa;
+}
+
+form .submit-button input,.submit-button input,.submit-button a{
+    background:#166dce;
+    padding:10px 80px;
+    font-size:16px;
+    color:#fff;
+    border:none;
+    border-radius:3px;
+}
+.submit-button a:hover{
+  color:#fff;
+}
+
+form .email-content small{
+  font-size:12px;
+  font-weight:600;
+}
+
+input:focus,form .main-content select:focus,form .main-content option:focus{
+  outline:none;
+  box-shadow:none;
+  -webkit-box-shadow:none;
+}
+body a{
+  text-decoration:none;
+}
+body a:hover{
+  text-decoration:none;
+}
+.main h4 {
+   font-size:14px;
+   text-align: center;
+}
+.main h4 span,.main h4 span svg{
+    color:#166dce;
+    font-size:14px;
+}
+form .email-content.main span{
+  position: relative;
+  top:0;
+  left:0;
+}
+
+.main .inputs .input-fields input{
+    padding:10px;
+    max-width:40px;
+    height:40px;
+    border-radius:5px;
+    font-size:18px;
+    text-align: center;
+}
+
+.success-page{
+  min-height:100vh;
+}
+
+.success-page h3{
+  color:#2473d0;
+  font-size:24px;
+}
+
+.success-page p{
+  max-width:350px;
+}
+
+.success-page .email-content{
+  min-height:100vh;
+  background:#ddd;
+}
+
+.success-page .email-content .innerDiv{
+    background:#fff;
+    padding:60px 80px;
+}
+
+.success-page p span {
+    font-weight:bold;
+}
+
+form .email-content span.error{
+  color:red;
+  font-size:12px;
+  display:block;
+  height:20px;
+  position: relative;
+  top:0;
+  left:0;
+}
+
+.main-inner-div {
+    min-height:100vh;
+}
+.main-inner-div h1{
+    font-size:60px;
 }
