@@ -16,14 +16,23 @@ class VerifyOtp extends Component{
             digit4 : null,
             digit5 : null,
             digit6 : null,
-            redirect : false,
+            redirect : false,            
             errors : {
                 emailError : ""
             }
         }
+        this.textInput1 = React.createRef();
+        this.textInput2 = React.createRef();
+        this.textInput3 = React.createRef();
+        this.textInput4 = React.createRef();
+        this.textInput5 = React.createRef();
+        this.textInput6 = React.createRef();
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
     }
+    componentDidMount() {
+        this.textInput1.current.focus();
+      }
     handleChange(e){
         e.preventDefault();
         const {name,value} = e.target;
@@ -31,32 +40,32 @@ class VerifyOtp extends Component{
         switch (name){
             case "digit1":
                 if(value.length===0) errors.emailError = "OTP cannot be empty";
-                if(value>9)   errors.emailError = "Invalid OTP";
+                if(value.length===1) this.textInput2.current.focus();                
                 else errors.emailError = "";
                 break;
             case "digit2":
                 if(value.length===0) errors.emailError = "OTP cannot be empty";
-                if(value>9)   errors.emailError = "Invalid OTP";
+                if(value.length===1) this.textInput3.current.focus();                
                 else errors.emailError = "";
                 break;
             case "digit3":
                 if(value.length===0) errors.emailError = "OTP cannot be empty";
-                if(value>9)   errors.emailError = "Invalid OTP";
+                if(value.length===1) this.textInput4.current.focus();                
                 else errors.emailError = "";
                 break;
             case "digit4":
                 if(value.length===0) errors.emailError = "OTP cannot be empty";
-                if(value>9)   errors.emailError = "Invalid OTP";
+                if(value.length===1) this.textInput5.current.focus();                
                 else errors.emailError = "";
                 break;
             case "digit5":
                 if(value.length===0) errors.emailError = "OTP cannot be empty";
-                if(value>9)   errors.emailError = "Invalid OTP";
+                if(value.length===1) this.textInput6.current.focus();                
                 else errors.emailError = "";
                 break;
             case "digit6":
                 if(value.length===0) errors.emailError = "OTP cannot be empty";
-                if(value>9)   errors.emailError = "Invalid OTP";
+                if(value.length===1) this.textInput6.current.blur();
                 else errors.emailError = "";
                 break;                             
             default:
@@ -99,12 +108,12 @@ class VerifyOtp extends Component{
                                             </h4>
                                             <div className="inputs">
                                                 <div className="d-flex justify-content-center input-fields">
-                                                    <input noValidate className="mr-2" onChange={this.handleChange} name="digit1" placeholder="0" type="number"  />
-                                                    <input noValidate className="mr-2" onChange={this.handleChange} name="digit2" placeholder="0" type="number"  />
-                                                    <input noValidate className="mr-2" onChange={this.handleChange} name="digit3" placeholder="0" type="number"  />
-                                                    <input noValidate className="mr-2" onChange={this.handleChange} name="digit4" placeholder="0" type="number"  />
-                                                    <input noValidate className="mr-2" onChange={this.handleChange} name="digit5" placeholder="0" type="number"  />
-                                                    <input noValidate onChange={this.handleChange} name="digit6" placeholder="0" type="number"  />                                                    
+                                                    <input ref={this.textInput1} noValidate className="mr-2" onChange={this.handleChange} name="digit1" placeholder="0" type="number"  />
+                                                    <input ref={this.textInput2} noValidate className="mr-2" onChange={this.handleChange} name="digit2" placeholder="0" type="number"  />
+                                                    <input ref={this.textInput3} noValidate className="mr-2" onChange={this.handleChange} name="digit3" placeholder="0" type="number"  />
+                                                    <input ref={this.textInput4} noValidate className="mr-2" onChange={this.handleChange} name="digit4" placeholder="0" type="number"  />
+                                                    <input ref={this.textInput5} noValidate className="mr-2" onChange={this.handleChange} name="digit5" placeholder="0" type="number"  />
+                                                    <input ref={this.textInput6} noValidate onChange={this.handleChange} name="digit6" placeholder="0" type="number"  />                                                    
                                                 </div>
                                                 <span className="text-right error d-block mb-2">{ errors.emailError.length > 0 ? errors.emailError : ""}</span>
                                                 <span className="text-right error d-block mb-2">{ CheckFormValidity(this.state)===false ? "OTP cannot be empty" : "" }</span>

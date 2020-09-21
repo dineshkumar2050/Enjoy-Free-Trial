@@ -26,7 +26,8 @@ class StartTrial extends Component{
                 industryError : "",
                 empStrengthError : "",
                 passwordError : "",
-                submitError : "" 
+                submitError : "" ,
+                mainError : ""
             }
         }
         this.handleChange = this.handleChange.bind(this);
